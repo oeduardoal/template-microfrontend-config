@@ -9,4 +9,9 @@ module.exports = {
     port: 3001,
     version: "1.0.0",
   },
+  header: {
+    url: "http://localhost:3002/",
+    port: 3002,
+    version: "1.0.0",
+  },
 };

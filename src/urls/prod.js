@@ -9,4 +9,9 @@ module.exports = {
     port: 80,
     version: "1.0.0",
   },
+  header: {
+    url: "https://mf-header.vercel.app/",
+    port: 80,
+    version: "1.0.0",
+  },
 };
