@@ -4,7 +4,8 @@ module.exports = {
     version: "1.0.0",
   },
   account: {
-    url: "http://localhost:3001/",
+    url: "https://mf-account.vercel.app/",
+    port: 80,
     version: "1.0.0",
   },
 };
