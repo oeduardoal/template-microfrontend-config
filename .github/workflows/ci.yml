@@ -1,0 +1,42 @@
+name: Build, Test and Publish
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up GitHub Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up GitHub User
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Use Node.js 11.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@oeduardoal"
+
+      - run: yarn install --frozen-lockfile --check-files
+
+      - uses: actions/cache@v2
+        id: cache-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+
+      - name: Release
+        if: github.ref == 'refs/heads/main'
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # for github-release
