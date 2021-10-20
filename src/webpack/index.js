@@ -2,12 +2,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /** @type { import('webpack').Configuration } */
 module.exports = {
-  entry: "./src/bootstrap",
+  entry: "./src",
   mode: "development",
+  resolve: {
+    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+  },
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -21,15 +24,6 @@ module.exports = {
         },
       },
     ],
-  },
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
-  output: {
-    filename: "static/js/[name].[contenthash:8].js",
-  },
-  devServer: {
-    port: 3000,
   },
   plugins: [
     new HtmlWebpackPlugin({
