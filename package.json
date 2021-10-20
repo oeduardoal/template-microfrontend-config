@@ -1,6 +1,6 @@
 {
   "name": "@oeduardoal/microfrontend-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "src/index.js",
   "repository": "https://github.com/oeduardoal/template-microfrontend-config.git",
   "author": "Eduardo Almeida <me@oeduardoal.dev>",

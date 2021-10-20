@@ -10,7 +10,7 @@ module.exports = {
     version: "1.0.0",
   },
   header: {
-    url: "https://mf-header.vercel.app/",
+    url: "https://mf-header-pi.vercel.app/",
     port: 80,
     version: "1.0.0",
   },
