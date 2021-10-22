@@ -7,6 +7,7 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
+  devtool: "inline-cheap-module-source-map",
   module: {
     rules: [
       {
@@ -27,6 +28,28 @@ module.exports = {
         test: /\.js$/,
         enforce: "pre",
         use: ["source-map-loader"],
+      },
+      {
+        test: /\.(css|less|styl|scss|sass|sss)$/,
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(css|less|styl|scss|sass|sss)$/,
+        include: /node_modules/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(eot|otf|ttf|woff|woff2)$/,
+        type: "asset",
+      },
+      {
+        test: /\.svg/,
+        type: "asset/inline",
+      },
+      {
+        test: /\.(bmp|gif|jpg|jpeg|png)$/,
+        type: "asset/resource",
       },
     ],
   },
