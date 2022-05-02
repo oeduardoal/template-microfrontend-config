@@ -19,12 +19,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Use Node.js 16.x
+      - name: Configure .npmrc
+        run: |
+          echo "@grupoboticario:registry=https://npm.pkg.github.com/" >  ~/.npmrc
+          echo "@oeduardoal:registry=https://npm.pkg.github.com/"     >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN"    >> ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
+      - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@oeduardoal"
 
       - run: yarn install --frozen-lockfile --check-files
 
