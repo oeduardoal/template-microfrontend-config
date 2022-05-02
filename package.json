@@ -12,6 +12,8 @@
     "@babel/preset-env": "7.17.10",
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
+    "@grupoboticario/flora": "^0.16.0",
+    "@grupoboticario/flora-react": "^0.11.13",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.5",
     "@types/react": "18.0.8",
     "@types/react-dom": "18.0.3",
