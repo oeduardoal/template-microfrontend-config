@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/oeduardoal/template-microfrontend-config/compare/v3.0.0...v4.0.0) (2022-05-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* 🧨 update app packages
+
+### Features
+
+* 🎸 update all package ([93454c8](https://github.com/oeduardoal/template-microfrontend-config/commit/93454c8dbeabdfb3158f0bcae08f2098d13d5346))
+
 ## 3.0.0 (2022-05-02)
 
 
