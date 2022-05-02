@@ -36,7 +36,10 @@ jobs:
 
       - name: Release
         if: github.ref == 'refs/heads/main'
-        run: yarn publish
+        run: |
+          HUSKY=0 yarn run standard-version
+          HUSKY=0 git push --follow-tags origin main
+          yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # for github-release

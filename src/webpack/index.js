@@ -10,8 +10,10 @@ module.exports = {
     minimize: false,
   },
   output: {
+    filename: "[name].js",
+    chunkFilename: "[name].js",
+    assetModuleFilename: "assets/[hash][ext][query]",
     publicPath: "auto",
-    clean: true,
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
@@ -64,7 +66,7 @@ module.exports = {
   },
   plugins: [
     new ReactRefreshWebpackPlugin({
-      exclude: [/node_modules/, /bootstrap\.(js|ts)$/],
+      exclude: [/node_modules/, /bootstrap\.(js|ts|tsx)$/],
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",

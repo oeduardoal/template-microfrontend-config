@@ -1,17 +1,8 @@
 module.exports = {
-  consumer: {
-    url: "https://mf-consumer.vercel.app/",
-    port: 80,
-    version: "1.0.0",
+  host: {
+    url: "https://mf-host.vercel.app/",
   },
-  account: {
-    url: "https://mf-account.vercel.app/",
-    port: 80,
-    version: "1.0.0",
-  },
-  header: {
-    url: "https://mf-header-pi.vercel.app/",
-    port: 80,
-    version: "1.0.0",
+  libs: {
+    url: "https://mf-libs.vercel.app/",
   },
 };
