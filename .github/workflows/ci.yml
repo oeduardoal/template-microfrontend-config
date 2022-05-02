@@ -19,7 +19,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Use Node.js 11.x
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
           node-version: 16.x
