@@ -1,13 +1,21 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 /** @type { import('webpack').Configuration } */
 module.exports = {
   entry: "./src",
   mode: "development",
+  devtool: "source-map",
+  optimization: {
+    minimize: false,
+  },
+  output: {
+    publicPath: "auto",
+    clean: true,
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },
-  devtool: "inline-cheap-module-source-map",
   module: {
     rules: [
       {
@@ -21,6 +29,7 @@ module.exports = {
               "@babel/preset-react",
               "@babel/preset-typescript",
             ],
+            plugins: [require.resolve("react-refresh/babel")],
           },
         },
       },
@@ -54,9 +63,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new ReactRefreshWebpackPlugin({
+      exclude: [/node_modules/, /bootstrap\.(js|ts)$/],
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       favicon: "./public/icon.png",
+      chunks: ["main"],
     }),
   ],
 };
