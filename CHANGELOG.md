@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/oeduardoal/template-microfrontend-config/compare/v4.0.0...v4.1.0) (2022-05-02)
+
+
+### Features
+
+* 🎸 add flora react ([92dbee3](https://github.com/oeduardoal/template-microfrontend-config/commit/92dbee322d83f249ebddb3e30998351a4628d86c))
+
 ## [4.0.0](https://github.com/oeduardoal/template-microfrontend-config/compare/v3.0.0...v4.0.0) (2022-05-02)
 
 
